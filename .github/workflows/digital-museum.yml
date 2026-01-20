@@ -3,7 +3,7 @@ name: Deploy digital-museum.html to S3
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - "digital-museum.html"
 
@@ -27,4 +27,4 @@ jobs:
 
       - name: Upload digital-museum.html to S3
         run: |
-          aws s3 cp digital-museum.html s3://${{ secrets.S3_BUCKET_NAME }}/digital-museum.html
+          aws s3 cp digital-museum.html s3://fairy-love/digital-museum.html
