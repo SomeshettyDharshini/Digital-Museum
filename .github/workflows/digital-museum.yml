@@ -3,7 +3,7 @@ name: Deploy digital-museum.html to S3
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - "digital-museum.html"
 
