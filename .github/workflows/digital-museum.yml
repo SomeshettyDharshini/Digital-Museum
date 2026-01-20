@@ -22,7 +22,7 @@ jobs:
       - name: Configure AWS credentials using OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::692809225052:role/Projectrole
+          role-to-assume: arn:aws:iam::692809225052:role/AWS-Capstone-Project
           aws-region: eu-west-2
 
       - name: Upload digital-museum.html to S3
