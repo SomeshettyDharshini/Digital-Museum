@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Creative Art & Crafts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:#fff5f8;
+}
+
+/* Header */
+header{
+    background:linear-gradient(120deg,#ff6f91,#ff9671,#ffc75f,#845ec2);
+    color:white;
+    text-align:center;
+    padding:70px 20px;
+}
+header h1{font-size:48px;}
+header p{font-size:20px;}
+
+/* Navbar */
+nav{
+    background:#2c2c54;
+    padding:15px;
+    text-align:center;
+}
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 18px;
+    font-size:18px;
+}
+nav a i{margin-right:6px;}
+
+/* Section */
+section{
+    padding:60px 20px;
+    text-align:center;
+}
+
+/* Creations Grid */
+.creations{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+.card{
+    background:white;
+    border-radius:20px;
+    box-shadow:0 6px 14px rgba(0,0,0,0.2);
+    overflow:hidden;
+    transition:transform 0.3s;
+}
+.card:hover{transform:scale(1.05);}
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+.card h3{
+    color:#ff6f91;
+}
+.card i{
+    font-size:28px;
+    color:#ffc75f;
+}
+
+/* Button */
+button{
+    background:linear-gradient(to right,#ff6f91,#ff9671);
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    font-size:16px;
+    margin:15px 0 25px;
+    cursor:pointer;
+}
+
+/* Highlight Section */
+.highlight{
+    background:linear-gradient(120deg,#fbeaff,#e0f7fa);
+}
+
+/* Gallery */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+.gallery img{
+    width:100%;
+    border-radius:18px;
+    box-shadow:0 5px 12px rgba(0,0,0,0.25);
+}
+
+/* Footer */
+footer{
+    background:#2c2c54;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+/* Modal */
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+.modal-content{
+    background:white;
+    width:350px;
+    margin:100px auto;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+}
+.modal input{
+    width:90%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+.close{
+    float:right;
+    cursor:pointer;
+    font-size:20px;
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎨 HandHue Studio</h1>
+    <h3> Dream it. Create it with heart. Love every handmade content.💖</h3>
+    <p>Color • Creativity • Handmade Love ✨</p>
+</header>
+
+<nav>
+    <a href="#"><i class="fa fa-home"></i>Home</a>
+    <a href="#"><i class="fa fa-palette"></i>Creations</a>
+    <a href="#"><i class="fa fa-images"></i>Gallery</a>
+    <a href="#"><i class="fa fa-heart"></i>Workshops</a>
+    <a href="#"><i class="fa fa-phone"></i>Contact</a>
+    
+
+
+
+    <span class="auth">
+        <a href="#" onclick="openLogin()">Login</a>
+        <a href="#" onclick="openRegister()">Register Now</a>
+    </span>
+
+    
+</nav>
+<!-- LOGIN MODAL -->
+<div class="modal" id="loginModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('loginModal')">&times;</span>
+        <h2>🔐 Login</h2>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button>Login</button>
+    </div>
+</div>
+
+<!-- REGISTER MODAL -->
+<div class="modal" id="registerModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('registerModal')">&times;</span>
+        <h2>📝 Register</h2>
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button>Register</button>
+    </div>
+</div>
+
+
+<section>
+    <h2>🌟 Our Creative Creations 🌟</h2>
+
+    <div class="creations">
+
+        <div class="card">
+            <img src="https://th.bing.com/th/id/R.2e718568049dc99764d928a78eb1d992?rik=VGg%2f81%2fa4KSmRw&riu=http%3a%2f%2f5.imimg.com%2fdata5%2fSELLER%2fDefault%2f2022%2f6%2fCV%2fSR%2fVR%2f105150937%2faf1-6-a.jpg&ehk=qvzxI%2fN8l7%2fcXqHExh2kx6idYpEHReEjpoxY3abze70%3d&risl=&pid=ImgRaw&r=0">
+            <h3><i class="fa fa-paint-brush"></i> Paintings</h3>
+            <p>Hand-painted colorful artworks</p>
+            <button>Explore</button>
+        </div>
+
+        <div class="card">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.UibSz3PoW-akb4nlmrMyIgHaHa?pid=ImgDet&w=206&h=206&c=7&dpr=1.3&o=7&rm=3">
+            <h3><i class="fa fa-scissors"></i> Paper Crafts</h3>
+            <p>Creative paper art designs</p>
+            <button>Explore</button>
+        </div>
+
+        <div class="card">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.eZkYTyZomvYgyUCCjm8LhAHaHa?w=680&h=680&rs=1&pid=ImgDetMain&o=7&rm=3">
+            <h3><i class="fa fa-gem"></i> Jewelry</h3>
+            <p>Handmade artistic jewelry</p>
+            <button>Explore</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.plusmood.com/wp-content/uploads/2024/11/boho-wall-decor-ideas.jpg">
+            <h3><i class="fa fa-house"></i> Home Decor</h3>
+            <p>Elegant handmade decor items</p>
+            <button>Explore</button>
+        </div>
+
+        <div class="card">
+            <img src="https://greengearsforgreen.weebly.com/uploads/6/5/2/4/65245619/picsart-06-24-09-31-17_orig.jpg">
+            <h3><i class="fa fa-leaf"></i> Eco Crafts</h3>
+            <p>Nature-friendly craft products</p>
+            <button>Explore</button>
+        </div>
+
+        <div class="card">
+            <img src="https://tse1.explicit.bing.net/th/id/OIP.bn2eg3o3Zo1-zZjXDCTpjQHaLG?pid=ImgDet&w=184&h=276&c=7&dpr=1.3&o=7&rm=3">
+            <h3><i class="fa fa-star"></i> Festival Decor</h3>
+            <p>Traditional & festive crafts</p>
+            <button>Explore</button>
+        </div>
+        <div class="card">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.yCzcFdcg1s1cIcHmFsZiXQHaI9?pid=ImgDet&w=206&h=249&c=7&dpr=1.3&o=7&rm=3">
+    <h3><i class="fa fa-feather"></i> Thread Art</h3>
+    <p>Beautiful handmade thread artworks</p>
+    <button>Explore</button>
+</div>
+
+<div class="card">
+    <img src="https://th.bing.com/th/id/OIP.5qEo6YkJHIr01RvPvJ2e6gHaEK?w=314&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3">
+    <h3><i class="fa fa-gift"></i> Gift Crafts</h3>
+    <p>Customized handmade gift items</p>
+    <button>Explore</button>
+</div>
+
+<div class="card">
+    <img src="https://i0.wp.com/sparshhacks.com/wp-content/uploads/2023/06/mandala-art-coaster-kit-1.jpeg?w=3510&ssl=1">
+    <h3><i class="fa fa-brush"></i> Mandala Art</h3>
+    <p>Detailed mandala & dot paintings</p>
+    <button>Explore</button>
+</div>
+
+<div class="card">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.feNF26cEyfCTzNhLKte-kAAAAA?pid=ImgDet&w=181&h=345&c=7&dpr=1.3&o=7&rm=3">
+    <h3><i class="fa fa-lightbulb"></i> Lamp & Bottle Art</h3>
+    <p>Decorative painted bottles & lamps</p>
+    <button>Explore</button>
+</div>
+
+    </div>
+</section>
+
+<section class="highlight">
+    <h2>📸 Creative Gallery</h2>
+    <div class="gallery">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.4kgMQPFKICFCv2Ezy0wRWAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3">
+        <img src="https://i.pinimg.com/736x/d9/4e/0c/d94e0c8f3d8e08acaca8885e7bb28dee.jpg">
+        <img src="https://th.bing.com/th/id/OIP.4797aG55O-I-v27IBukmYAHaIg?w=169&h=195&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3">
+        <img src="https://th.bing.com/th/id/OIP.0WlQE4tM4t8amgtOL4NiXgAAAA?w=273&h=182&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3">
+        <img src="https://th.bing.com/th/id/OIP.WVfBGozgGg79pFSZhOEt4wHaEK?w=267&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.gSUOUUblhOjQsVEBsqPbHgHaJQ?pid=ImgDet&w=184&h=230&c=7&dpr=1.3&o=7&rm=3">
+        
+    </div>
+</section>
+
+<section>
+    <h2>💖 Why Choose Us?</h2>
+    <p>✔ Handmade with love<br>
+       ✔ Unique designs<br>
+       ✔ Crafted to spread smiles and happiness<br>
+       ✔ Made with heart,not machines<br>
+       ✔ Custom orders available<br>
+       ✔ Workshops & training</p>
+    <button>Explore Our Creations</button>
+</section>
+
+<footer>
+    <p>© 2026 Creative Art & Crafts | Designed with 🎨 & ❤️</p>
+</footer>
+<script>
+function openLogin(){
+    document.getElementById("loginModal").style.display="block";
+}
+function openRegister(){
+    document.getElementById("registerModal").style.display="block";
+}
+function closeModal(id){
+    document.getElementById(id).style.display="none";
+}
+</script>
+
+
+</body>
+</html>
