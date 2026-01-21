@@ -11,15 +11,7 @@ body{
     font-family:Arial, Helvetica, sans-serif;
     background:#111827;
     color:#f9fafb;
-    display:flex;
 }
-
-/* LEFT MAIN CONTENT */
-.main{
-    width:70%;
-}
-
-/* HEADER */
 header{
     padding:25px;
     text-align:center;
@@ -32,30 +24,15 @@ header h1{
 header p{
     opacity:0.8;
 }
-
-/* GALLERY */
 .search-box{
     text-align:center;
     margin:20px;
 }
 input{
     padding:10px;
-    width:90%;
+    width:250px;
     border-radius:6px;
     border:none;
-    margin-bottom:10px;
-}
-button{
-    padding:10px;
-    width:100%;
-    border:none;
-    border-radius:8px;
-    background:#2563eb;
-    color:white;
-    cursor:pointer;
-}
-button:hover{
-    background:#1d4ed8;
 }
 .gallery{
     display:grid;
@@ -87,8 +64,6 @@ button:hover{
     font-size:14px;
     opacity:0.8;
 }
-
-/* MODAL */
 .modal{
     position:fixed;
     inset:0;
@@ -112,32 +87,6 @@ button:hover{
     cursor:pointer;
     font-size:20px;
 }
-
-/* RIGHT SIDE AUTH PANEL */
-.auth{
-    width:30%;
-    background:#020617;
-    padding:25px;
-    box-shadow:-5px 0 15px rgba(0,0,0,0.4);
-}
-.auth h2{
-    text-align:center;
-}
-.toggle{
-    text-align:center;
-    margin-bottom:15px;
-}
-.toggle span{
-    cursor:pointer;
-    color:#60a5fa;
-}
-#msg{
-    text-align:center;
-    margin-top:10px;
-    font-size:14px;
-}
-
-/* FOOTER */
 footer{
     text-align:center;
     padding:15px;
@@ -149,9 +98,6 @@ footer{
 
 <body>
 
-<!-- LEFT CONTENT -->
-<div class="main">
-
 <header>
     <h1>🏛 Digital Museum</h1>
     <p>Explore Culture & Heritage Virtually</p>
@@ -162,6 +108,7 @@ footer{
 </div>
 
 <div class="gallery" id="gallery">
+
     <div class="card" onclick="openModal(this)">
         <img src="https://images.unsplash.com/photo-1548013146-72479768bada">
         <h3>Taj Mahal</h3>
@@ -169,52 +116,25 @@ footer{
     </div>
 
     <div class="card" onclick="openModal(this)">
-        <img src="https://images.unsplash.com/photo-1505666287591-07c4e7c56fc1">
+        <img src="https://th.bing.com/th/id/ODL.b3063cd3d4d8d5d138426ee98f4f8524?w=310&h=198&c=7&rs=1&bgcl=ffff14&r=0&o=6&dpr=1.3&pid=AlgoBlockDebug">
         <h3>Mona Lisa</h3>
         <p>World-famous painting by Leonardo da Vinci.</p>
     </div>
 
     <div class="card" onclick="openModal(this)">
-        <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3">
+        <img src="https://th.bing.com/th/id/OIP.JezxOWtsWyG3TZK4IOmtlQHaEO?w=208&h=119&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3">
         <h3>Greek Sculpture</h3>
         <p>Ancient sculpture representing Greek mythology.</p>
     </div>
-</div>
 
-<footer>
-    © 2026 Digital Museum | Culture & Heritage
-</footer>
-
-</div>
-
-<!-- RIGHT AUTH PANEL -->
-<div class="auth">
-
-<h2 id="formTitle">Login</h2>
-
-<div id="loginForm">
-    <input type="text" id="loginName" placeholder="Name">
-    <input type="tel" id="loginPhone" placeholder="Phone Number">
-    <button onclick="login()">Login</button>
-</div>
-
-<div id="registerForm" style="display:none;">
-    <input type="text" id="regName" placeholder="Name">
-    <input type="tel" id="regPhone" placeholder="Phone Number">
-    <input type="password" id="regPass" placeholder="Password">
-    <button onclick="register()">Register</button>
-</div>
-
-<div class="toggle">
-    <span onclick="showLogin()">Login</span> | 
-    <span onclick="showRegister()">Register</span>
-</div>
-
-<p id="msg"></p>
+    <div class="card" onclick="openModal(this)">
+        <img src="https://th.bing.com/th/id/OIP.nwv1KlDhr2N9Mn8gmD3IHgHaF1?w=234&h=184&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3">
+        <h3>Traditional Dance</h3>
+        <p>Cultural dance heritage passed through generations.</p>
+    </div>
 
 </div>
 
-<!-- MODAL -->
 <div class="modal" id="modal">
     <div class="modal-content">
         <div class="close" onclick="closeModal()">✖</div>
@@ -224,60 +144,22 @@ footer{
     </div>
 </div>
 
+<footer>
+    © 2026 Digital Museum | Culture & Heritage
+</footer>
+
 <script>
-function showLogin(){
-    document.getElementById("loginForm").style.display="block";
-    document.getElementById("registerForm").style.display="none";
-    document.getElementById("formTitle").innerText="Login";
-    document.getElementById("msg").innerText="";
-}
-function showRegister(){
-    document.getElementById("loginForm").style.display="none";
-    document.getElementById("registerForm").style.display="block";
-    document.getElementById("formTitle").innerText="Register";
-    document.getElementById("msg").innerText="";
-}
-
-function login(){
-    let name=document.getElementById("loginName").value;
-    let phone=document.getElementById("loginPhone").value;
-    let msg=document.getElementById("msg");
-
-    if(name===""||phone===""){
-        msg.style.color="red";
-        msg.innerText="Enter all login details";
-        return;
-    }
-    msg.style.color="#22c55e";
-    msg.innerText="Login Successful ✔";
-}
-
-function register(){
-    let name=document.getElementById("regName").value;
-    let phone=document.getElementById("regPhone").value;
-    let pass=document.getElementById("regPass").value;
-    let msg=document.getElementById("msg");
-
-    if(name===""||phone===""||pass===""){
-        msg.style.color="red";
-        msg.innerText="Fill all registration fields";
-        return;
-    }
-    msg.style.color="#22c55e";
-    msg.innerText="Registration Successful ✔";
-}
-
 function openModal(card){
-    modal.style.display="flex";
-    modalImg.src=card.querySelector("img").src;
-    modalTitle.innerText=card.querySelector("h3").innerText;
-    modalDesc.innerText=card.querySelector("p").innerText;
+    document.getElementById("modal").style.display="flex";
+    document.getElementById("modalImg").src=card.querySelector("img").src;
+    document.getElementById("modalTitle").innerText=card.querySelector("h3").innerText;
+    document.getElementById("modalDesc").innerText=card.querySelector("p").innerText;
 }
 function closeModal(){
-    modal.style.display="none";
+    document.getElementById("modal").style.display="none";
 }
 function filterArtifacts(){
-    let input=search.value.toLowerCase();
+    let input=document.getElementById("search").value.toLowerCase();
     let cards=document.getElementsByClassName("card");
     for(let c of cards){
         let title=c.querySelector("h3").innerText.toLowerCase();
